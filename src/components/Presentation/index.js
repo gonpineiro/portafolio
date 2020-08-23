@@ -1,27 +1,31 @@
 import React from "react";
+
 import {
+  Paragraph,
   Section,
-  SectionInfo,
   SectionImg,
+  SectionInfo,
+  CardInfo,
   InfoTitle,
-  P,
-} from "./styles";
+} from "../GlobalStyle";
 
 const Presentation = () => {
   return (
     <Section>
-      <SectionInfo>
-        <InfoTitle>Frontend and Backend Development</InfoTitle>
-        <P>
-          Desarrollador de aplicaciones de escritorio y web con mas de 5 años de
-          experiencia.
-        </P>
-        <P>
-          Actualmente trabajo desarrollando aplicaciones web solucionando
-          problemas o implementando productos a empresas.
-        </P>
-      </SectionInfo>
-      <SectionImg> asd</SectionImg>
+      <CardInfo>
+        <SectionInfo>
+          <InfoTitle>Frontend and Backend Development</InfoTitle>
+          <Paragraph>
+            Desarrollador de aplicaciones de escritorio y web con mas de 5 años
+            de experiencia.
+          </Paragraph>
+          <Paragraph>
+            Actualmente trabajo desarrollando aplicaciones web solucionando
+            problemas o implementando productos a empresas.
+          </Paragraph>
+        </SectionInfo>
+        <SectionImg>asd</SectionImg>
+      </CardInfo>
     </Section>
   );
 };

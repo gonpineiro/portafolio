@@ -7,13 +7,6 @@ export const Section = styled.section`
   flex-direction: column;
 `;
 
-export const Title = styled.h1`
-  letter-spacing: 1.5px;
-  margin-top: 0;
-  margin-bottom: 55px;
-  font-size: 35px;
-`;
-
 export const Skills = styled.section`
   width: 100%;
   display: flex;
@@ -72,10 +65,18 @@ export const SkillFigure = styled.figure`
 
 export const SkillTitle = styled.h1`
   font-weight: 400;
+  text-align: center;
   opacity: 0.4;
   cursor: pointer;
   margin-top: 0;
   transition: opacity 1s ease;
+  @media (max-width: 440px) {
+    width: 60px;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 290px) {
+    font-size: 10px;
+  }
 `;
 
 export const SectionInfo = styled.section`
