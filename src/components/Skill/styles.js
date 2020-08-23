@@ -56,6 +56,10 @@ export const SkillCard = styled.div`
     width: 200px;
     height: 200px;
   }
+  @media (max-width: 440px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
 export const SkillFigure = styled.figure`

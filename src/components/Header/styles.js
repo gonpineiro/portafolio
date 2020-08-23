@@ -28,7 +28,10 @@ export const Menu = styled.h1`
   margin: 0;
   font-size: 15px;
   margin-right: 30px;
-  letter-spacing: .8px;
+  letter-spacing: 0.8px;
   font-weight: 400;
   cursor: pointer;
+  @media (max-width: 500px) {
+    font-size: 13px;
+  }
 `;

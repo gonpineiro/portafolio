@@ -34,8 +34,9 @@ export const SectionInfo = styled.section`
 `;
 
 export const P = styled.p`
-  font-size: 25px;
+  font-size: 20px;
   margin: 40px 0;
+  padding: 0 10px;
   font-weight: 400;
 `;
 
@@ -43,4 +44,7 @@ export const SectionImg = styled.section`
   background: white;
   height: 660px;
   width: 100%;
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;

@@ -14,6 +14,9 @@ export const Svg = styled.svg`
   height: auto;
   cursor: pointer;
   margin: auto;
+  @media (max-width: 440px) {
+    width: 60px;
+  }
 `;
 
 const GlobalStyle = createGlobalStyle`
@@ -24,6 +27,9 @@ const GlobalStyle = createGlobalStyle`
     background: #000000;
     color: white;
     font-family: 'Maven Pro';
+    @media (max-width: 720px) {
+      padding: 15px 20px;
+    }
   }
 
   #root{
