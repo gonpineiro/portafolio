@@ -12,6 +12,9 @@ export const Skills = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 500px) {
+  justify-content: center;
+  }
 `;
 
 export const SkillCard = styled.div`

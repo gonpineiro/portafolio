@@ -50,7 +50,7 @@ export const SectionInfo = styled.section`
 export const InfoTitle = styled.h1`
   font-weight: 400;
   font-size: 32px;
-  margin-top: 0;
+ // margin-top: 0;
   @media (max-width: 720px) {
     font-size: 25px;
   }
