@@ -71,7 +71,6 @@ export const SkillTitle = styled.h1`
   margin-top: 0;
   transition: opacity 1s ease;
   @media (max-width: 440px) {
-    width: 60px;
     margin-bottom: 5px;
   }
   @media (max-width: 290px) {

@@ -1,4 +1,3 @@
-// globalStyles.js
 import styled, { createGlobalStyle } from "styled-components";
 
 export const TitleSection = styled.h1`
