@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { TimelineLite } from 'gsap/all';
-
 import linkedinIcon from '../../assets/linkedin.png';
 
 import { HeaderApp, PersonSection, Name, Hr, SectionMenu, Menu, RedSocialIcon } from './styles';
@@ -24,8 +23,8 @@ class Header extends Component {
         this.animation
             .set(this.content, { autoAlpha: 1 })
             .from(this.name, 0.5, { left: '50%', autoAlpha: 0 })
-            .from(this.redSocial, 0.5, { right: '50%', autoAlpha: 0 }, "0")
-            .from(this.exp, 0.5, { scale: 0.5, autoAlpha: 0 }, "0")
+            .from(this.redSocial, 0.5, { right: '50%', autoAlpha: 0 }, '0')
+            .from(this.exp, 0.5, { scale: 0.5, autoAlpha: 0 }, '0')
             .from(this.hab, 0.5, { scale: 0.5, autoAlpha: 0 })
             .from(this.pro, 0.5, { scale: 0.5, autoAlpha: 0 });
     }
