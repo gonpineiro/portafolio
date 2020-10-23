@@ -5,8 +5,6 @@ import Experience from "./components/Experience";
 import Skill from "./components/Skill";
 import { Hr } from "./components/GlobalStyle";
 
-import { useNearScreen } from "./hooks/useNearScreen";
-
 function App() {
   return (
     <>
