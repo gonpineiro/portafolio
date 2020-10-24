@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-/* import Header from './components/Header'; */
 import Presentation from './components/Presentation';
 import Experience from './components/Experience';
 import Skill from './components/Skill';
-/* import { Hr } from './components/GlobalStyle'; */
 import Layout from './components/Layout';
 
 function App() {
