@@ -37,6 +37,7 @@ class Header extends Component {
     }
 
     render() {
+        console.log(window.location.origin + cv);
         return (
             <HeaderApp>
                 <PersonSection>
@@ -45,7 +46,7 @@ class Header extends Component {
                         <RedSocialIcon
                             src={cvIcon}
                             onClick={() => {
-                                window.location = { cv };
+                                window.open(window.location.origin + cv);
                                 return null;
                             }}
                         />

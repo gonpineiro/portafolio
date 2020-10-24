@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Section, Skills, SkillCard, SkillTitle, SkillFigure } from './styles';
+import { Section, Skills, SkillCard, SkillTitle, SkillFigure, } from './styles';
 
 import {
     CSS3Logo,
@@ -15,6 +15,9 @@ import {
     ReduxLogo,
     CLogo,
     CiscoLogo,
+    AngularLogo,
+    MaterialUiLogo,
+    LaravelLogo,
 } from '../svg';
 
 import { HrSection, TitleSection } from '../GlobalStyle';
@@ -69,12 +72,15 @@ const iconLogo = [
     Skill.contentCard('CSS3', <CSS3Logo />),
     Skill.contentCard('HTML5', <HTMLLogo />),
     Skill.contentCard('JavaScript', <JSLogo />),
-    Skill.contentCard('Bootstrap', <BT4Logo />),
-    Skill.contentCard('Webpack', <WebpackLogo />),
     Skill.contentCard('ReactJs', <ReactLogo />),
     Skill.contentCard('Redux', <ReduxLogo />),
+    Skill.contentCard('AngularJs', <AngularLogo />),
     Skill.contentCard('NodeJs', <NodeLogo />),
+    Skill.contentCard('Material UI', <MaterialUiLogo />),
+    Skill.contentCard('Bootstrap', <BT4Logo />),
+    Skill.contentCard('Webpack', <WebpackLogo />),
     Skill.contentCard('PHP', <PHPLogo />),
+    Skill.contentCard('Laravel', <LaravelLogo />),
     Skill.contentCard('MySQL', <MYSQLLogo />),
     Skill.contentCard('C', <CLogo />),
     Skill.contentCard('Cisco', <CiscoLogo />),
