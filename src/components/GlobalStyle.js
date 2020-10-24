@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { Link as LinkRouter } from 'react-router-dom';
 
 import code from '../assets/code.png';
 
@@ -106,6 +107,21 @@ export const Svg = styled.svg`
     }
     @media (max-width: 440px) {
         width: 60px;
+    }
+`;
+
+export const Link = styled(LinkRouter)`
+    position: relative;
+    margin: 0;
+    font-size: 15px;
+    margin-right: 30px;
+    letter-spacing: 0.8px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    @media (max-width: 500px) {
+        font-size: 13px;
     }
 `;
 
