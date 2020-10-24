@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  width: 100%;
-  height: 660px;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    height: 660px;
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Skills = styled.section`
