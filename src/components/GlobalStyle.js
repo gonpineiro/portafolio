@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { Link as LinkRouter } from 'react-router-dom';
+import { NavLink as LinkRouter } from 'react-router-dom';
 
 import code from '../assets/code.png';
 
@@ -7,13 +7,14 @@ export const TitleSection = styled.h1`
     position: relative;
     letter-spacing: 1.5px;
     margin-top: 0;
-    margin-bottom: 55px;
+    margin-bottom: 10px;
     font-size: 35px;
     font-weight: 400;
 `;
 
 export const Section = styled.section`
     width: 100%;
+    overflow: hidden;
     min-height: 660px;
     display: flex;
     flex-direction: column;
@@ -24,6 +25,7 @@ export const Section = styled.section`
 
 export const CardInfo = styled.section`
     width: 100%;
+    overflow: hidden;
     min-height: 660px;
     display: flex;
     flex-direction: row;
@@ -63,6 +65,7 @@ export const Img = styled.img`
 
 export const SectionInfo = styled.section`
     background: #191919;
+    position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -96,6 +99,15 @@ export const Hr = styled.hr`
     width: 100%;
     margin-bottom: 55px;
 `;
+export const HrSection = styled.hr`
+    color: white;
+    position: relative;
+    border: 1px solid white;
+    margin-top: 55px;
+    width: 300px;
+    margin: 0;
+    margin-bottom: 55px;
+`;
 
 export const Svg = styled.svg`
     width: 180px;
@@ -122,6 +134,7 @@ export const Link = styled(LinkRouter)`
     cursor: pointer;
     @media (max-width: 500px) {
         font-size: 13px;
+        margin-right: 20px;
     }
 `;
 
@@ -141,6 +154,9 @@ const GlobalStyle = createGlobalStyle`
   #root{
     display:flex;
     flex-direction: column;
+  }
+  .is-active{
+      color: rgb(182,182,182);
   }
 `;
 

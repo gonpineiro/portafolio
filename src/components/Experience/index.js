@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TimelineLite } from 'gsap';
 
-import { TitleSection, Paragraph, Section, SectionImgExp, SectionInfo, CardInfo } from '../GlobalStyle';
+import { TitleSection, Paragraph, Section, SectionImgExp, SectionInfo, CardInfo, HrSection } from '../GlobalStyle';
 
 class Header extends Component {
     constructor(props) {
@@ -19,18 +19,21 @@ class Header extends Component {
     componentDidMount() {
         this.animation
             .from(this.titleSection, 0.5, { left: '100%' })
+            .from(this.hr, 0.5, { right: '100%', autoAlpha: 0 }, '0')
+            .from(this.figure, 0.5, { left: '100%', autoAlpha: 0 }, '0')
+            .from(this.section, 0.5, { right: '100%', autoAlpha: 0 }, '0')
             .from(this.paragrapOne, 0.5, { left: -100, autoAlpha: 0 })
             .from(this.paragraphTwo, 0.5, { left: 100, autoAlpha: 0 })
-            .from(this.paragraphThree, 0.5, { left: -100, autoAlpha: 0 })            
-            .from(this.figure, 0.5, { left: 100, autoAlpha: 0 })
+            .from(this.paragraphThree, 0.5, { left: -100, autoAlpha: 0 });
     }
     render() {
         return (
             <Section>
                 <TitleSection ref={(h1) => (this.titleSection = h1)}>Experiencia</TitleSection>
+                <HrSection ref={(hr) => (this.hr = hr)} />
                 <CardInfo>
                     <SectionImgExp ref={(section) => (this.figure = section)}></SectionImgExp>
-                    <SectionInfo>
+                    <SectionInfo ref={(section) => (this.section = section)}>
                         <Paragraph ref={(p) => (this.paragrapOne = p)}>
                             Mi experiencia en el desarrollo de software comienza hace 6 años como analista funcional de un sistema para el
                             rubro retail, mis principales funciones eran: hacer testing, brindar soporte y desarrollo de scripts SQL.

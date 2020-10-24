@@ -41,13 +41,13 @@ class Header extends Component {
                 </PersonSection>
                 <Hr />
                 <SectionMenu>
-                    <Link to="/" ref={(h1) => (this.ini = h1)}>
-                        Inicio
+                    <Link exact={true} to="/" ref={(h1) => (this.ini = h1)} activeClassName="is-active">
+                        Quién soy
                     </Link>
-                    <Link to="/experiencia" ref={(h1) => (this.exp = h1)}>
+                    <Link to="/experiencia" ref={(h1) => (this.exp = h1)} activeClassName="is-active">
                         Experiencia
                     </Link>
-                    <Link to="/habilidades" ref={(h1) => (this.hab = h1)}>
+                    <Link to="/habilidades" ref={(h1) => (this.hab = h1)} activeClassName="is-active">
                         Habilidades
                     </Link>
                     <Menu ref={(h1) => (this.pro = h1)}>Proyectos</Menu>

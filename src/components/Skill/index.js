@@ -17,7 +17,7 @@ import {
     CiscoLogo,
 } from '../svg';
 
-import { TitleSection } from '../GlobalStyle';
+import { HrSection, TitleSection } from '../GlobalStyle';
 import { Component } from 'react';
 import { TimelineLite } from 'gsap';
 
@@ -36,7 +36,10 @@ class Skill extends Component {
     }
 
     componentDidMount() {
-        this.animation.from(this.titleSection, 0.5, { left: '100%' }).staggerFrom(this.icons, 0.2, { scale: 0, autoAlpha: 0 }, 0.1); //animate all icons with 0.1 second stagger
+        this.animation
+            .from(this.titleSection, 0.5, { left: '100%' })
+            .from(this.hr, 0.5, { right: '100%' }, '0')
+            .staggerFrom(this.icons, 0.2, { scale: 0, autoAlpha: 0 }, 0.1); //animate all icons with 0.1 second stagger
     }
 
     static contentCard = (str, comp) => {
@@ -51,9 +54,10 @@ class Skill extends Component {
         return (
             <Section>
                 <TitleSection ref={(section) => (this.titleSection = section)}>Habilidades</TitleSection>
+                <HrSection ref={(hr) => (this.hr = hr)} />
                 <Skills>
                     {iconLogo.map((icon, index) => (
-                        <SkillCard ref={(img) => (this.icons[index] = img)}>{icon}</SkillCard>
+                        <SkillCard key={index} ref={(img) => (this.icons[index] = img)}>{icon}</SkillCard>
                     ))}
                 </Skills>
             </Section>
