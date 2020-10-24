@@ -17,7 +17,13 @@ export const Name = styled.h1`
     font-weight: 400;
 `;
 
+export const RedSocialSection = styled.section`
+    position: relative;
+    display: flex;
+`;
+
 export const RedSocialIcon = styled.img`
+    margin-left: 20px;
     align-self: center;
     position: relative;
     cursor: pointer;

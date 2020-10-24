@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { TimelineLite } from 'gsap';
-import linkedinIcon from '../../assets/linkedin.png';
 
-import { HeaderApp, PersonSection, Name, Hr, SectionMenu, Menu, RedSocialIcon } from './styles';
+import linkedinIcon from '../../assets/linkedin.png';
+import githubIcon from '../../assets/github.png';
+import cvIcon from '../../assets/cv.png';
+import cv from '../../assets/cv.pdf';
+
+import { HeaderApp, PersonSection, Name, Hr, SectionMenu, Menu, RedSocialIcon, RedSocialSection } from './styles';
 import { Link } from '../GlobalStyle';
 
 class Header extends Component {
@@ -24,12 +28,12 @@ class Header extends Component {
     componentDidMount() {
         this.animation
             .set(this.content, { autoAlpha: 1 })
-            .from(this.name, 0.5, { left: '50%', autoAlpha: 0 })
-            .from(this.redSocial, 0.5, { right: '50%', autoAlpha: 0 }, '0')
-            .from(this.ini, 0.5, { scale: 0.5, autoAlpha: 0 })
-            .from(this.exp, 0.5, { scale: 0.5, autoAlpha: 0 })
-            .from(this.hab, 0.5, { scale: 0.5, autoAlpha: 0 })
-            .from(this.pro, 0.5, { scale: 0.5, autoAlpha: 0 });
+            .from(this.name, 0.5, { left: '100%', autoAlpha: 0 })
+            .from(this.redSocial, 0.5, { right: '100%', autoAlpha: 0 }, '0')
+            .from(this.ini, 0.2, { scale: 0.5, autoAlpha: 0 })
+            .from(this.exp, 0.2, { scale: 0.5, autoAlpha: 0 })
+            .from(this.hab, 0.2, { scale: 0.5, autoAlpha: 0 })
+            .from(this.pro, 0.2, { scale: 0.5, autoAlpha: 0 });
     }
 
     render() {
@@ -37,7 +41,29 @@ class Header extends Component {
             <HeaderApp>
                 <PersonSection>
                     <Name ref={(h1) => (this.name = h1)}> Gonzalo Piñeiro</Name>
-                    <RedSocialIcon src={linkedinIcon} ref={(h1) => (this.redSocial = h1)} />
+                    <RedSocialSection ref={(h1) => (this.redSocial = h1)}>
+                        <RedSocialIcon
+                            src={cvIcon}
+                            onClick={() => {
+                                window.location = { cv };
+                                return null;
+                            }}
+                        />
+                        <RedSocialIcon
+                            src={linkedinIcon}
+                            onClick={() => {
+                                window.open('https://www.linkedin.com/in/gonzalo-pi%C3%B1eiro-287257116/');
+                                return null;
+                            }}
+                        />
+                        <RedSocialIcon
+                            src={githubIcon}
+                            onClick={() => {
+                                window.open('https://github.com/gonpineiro');
+                                return null;
+                            }}
+                        />
+                    </RedSocialSection>
                 </PersonSection>
                 <Hr />
                 <SectionMenu>
