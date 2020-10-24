@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineLite } from 'gsap/all';
+import { TimelineLite } from 'gsap';
 
 import { Paragraph, Section, SectionImg, SectionInfo, CardInfo, InfoTitle, Img } from '../GlobalStyle';
 

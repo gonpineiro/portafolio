@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineLite } from 'gsap/all';
+import { TimelineLite } from 'gsap';
 
 import { TitleSection, Paragraph, Section, SectionImgExp, SectionInfo, CardInfo } from '../GlobalStyle';
 
@@ -14,20 +14,22 @@ class Header extends Component {
         this.paragraphTwo = null;
         this.paragraphThree = null;
         this.img = null;
+        this.figure = null;
     }
     componentDidMount() {
         this.animation
             .from(this.titleSection, 0.5, { left: '100%' })
             .from(this.paragrapOne, 0.5, { left: -100, autoAlpha: 0 })
             .from(this.paragraphTwo, 0.5, { left: 100, autoAlpha: 0 })
-            .from(this.paragraphThree, 0.5, { left: -100, autoAlpha: 0 });
+            .from(this.paragraphThree, 0.5, { left: -100, autoAlpha: 0 })            
+            .from(this.figure, 0.5, { left: 100, autoAlpha: 0 })
     }
     render() {
         return (
             <Section>
                 <TitleSection ref={(h1) => (this.titleSection = h1)}>Experiencia</TitleSection>
                 <CardInfo>
-                    <SectionImgExp></SectionImgExp>
+                    <SectionImgExp ref={(section) => (this.figure = section)}></SectionImgExp>
                     <SectionInfo>
                         <Paragraph ref={(p) => (this.paragrapOne = p)}>
                             Mi experiencia en el desarrollo de software comienza hace 6 años como analista funcional de un sistema para el

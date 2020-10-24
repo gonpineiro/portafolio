@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TimelineLite } from 'gsap/all';
+import { TimelineLite } from 'gsap';
 import linkedinIcon from '../../assets/linkedin.png';
 
 import { HeaderApp, PersonSection, Name, Hr, SectionMenu, Menu, RedSocialIcon } from './styles';

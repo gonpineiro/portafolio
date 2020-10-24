@@ -1,59 +1,79 @@
-import React from "react";
+import React from 'react';
+
+import { Section, Skills, SkillCard, SkillTitle, SkillFigure } from './styles';
 
 import {
-  Section,
-  Skills,
-  SkillCard,
-  SkillTitle,
-  SkillFigure,
-} from "./styles";
+    CSS3Logo,
+    HTMLLogo,
+    JSLogo,
+    MYSQLLogo,
+    ReactLogo,
+    NodeLogo,
+    WebpackLogo,
+    PHPLogo,
+    BT4Logo,
+    ReduxLogo,
+    CLogo,
+    CiscoLogo,
+} from '../svg';
 
-import {
-  CSS3Logo,
-  HTMLLogo,
-  JSLogo,
-  MYSQLLogo,
-  ReactLogo,
-  NodeLogo,
-  WebpackLogo,
-  PHPLogo,
-  BT4Logo,
-  ReduxLogo,
-  CLogo,
-  CiscoLogo,
-} from "../svg";
+import { TitleSection } from '../GlobalStyle';
+import { Component } from 'react';
+import { TimelineLite } from 'gsap';
 
-import { TitleSection } from "../GlobalStyle";
+class Skill extends Component {
+    constructor(props) {
+        super(props);
 
-const contentCard = (str, comp) => {
-  return (
-    <>
-      <SkillFigure>{comp}</SkillFigure>
-      <SkillTitle>{str}</SkillTitle>
-    </>
-  );
-};
+        this.animation = new TimelineLite();
 
-const Skill = () => {
-  return (
-    <Section>
-      <TitleSection>Habilidades</TitleSection>
-      <Skills>
-        <SkillCard>{contentCard("CSS3", <CSS3Logo />)}</SkillCard>
-        <SkillCard>{contentCard("HTML5", <HTMLLogo />)}</SkillCard>
-        <SkillCard>{contentCard("JavaScript", <JSLogo />)}</SkillCard>
-        <SkillCard>{contentCard("Bootstrap", <BT4Logo />)}</SkillCard>
-        <SkillCard>{contentCard("Webpack", <WebpackLogo />)}</SkillCard>
-        <SkillCard>{contentCard("ReactJs", <ReactLogo />)}</SkillCard>
-        <SkillCard>{contentCard("Redux", <ReduxLogo />)}</SkillCard>
-        <SkillCard>{contentCard("NodeJs", <NodeLogo />)}</SkillCard>
-        <SkillCard>{contentCard("PHP", <PHPLogo />)}</SkillCard>
-        <SkillCard>{contentCard("MySQL", <MYSQLLogo />)}</SkillCard>
-        <SkillCard>{contentCard("C", <CLogo />)}</SkillCard>
-        <SkillCard>{contentCard("Cisco", <CiscoLogo />)}</SkillCard>
-      </Skills>
-    </Section>
-  );
-};
+        this.content = null;
+        this.head = null;
+        this.subhead = null;
+        this.feature = null;
+        this.description = null;
+        this.icons = [];
+    }
+
+    componentDidMount() {
+        this.animation.from(this.titleSection, 0.5, { left: '100%' }).staggerFrom(this.icons, 0.2, { scale: 0, autoAlpha: 0 }, 0.1); //animate all icons with 0.1 second stagger
+    }
+
+    static contentCard = (str, comp) => {
+        return (
+            <>
+                <SkillFigure>{comp}</SkillFigure>
+                <SkillTitle>{str}</SkillTitle>
+            </>
+        );
+    };
+    render() {
+        return (
+            <Section>
+                <TitleSection ref={(section) => (this.titleSection = section)}>Habilidades</TitleSection>
+                <Skills>
+                    {iconLogo.map((icon, index) => (
+                        <SkillCard ref={(img) => (this.icons[index] = img)}>{icon}</SkillCard>
+                    ))}
+                </Skills>
+            </Section>
+        );
+    }
+}
+
+const iconLogo = [
+    Skill.contentCard('CSS3', <CSS3Logo />),
+    Skill.contentCard('HTML5', <HTMLLogo />),
+    Skill.contentCard('JavaScript', <JSLogo />),
+    Skill.contentCard('Bootstrap', <BT4Logo />),
+    Skill.contentCard('Webpack', <WebpackLogo />),
+    Skill.contentCard('ReactJs', <ReactLogo />),
+    Skill.contentCard('Redux', <ReduxLogo />),
+    Skill.contentCard('NodeJs', <NodeLogo />),
+    Skill.contentCard('PHP', <PHPLogo />),
+    Skill.contentCard('MySQL', <MYSQLLogo />),
+    Skill.contentCard('C', <CLogo />),
+    Skill.contentCard('Cisco', <CiscoLogo />),
+];
 
 export default Skill;
