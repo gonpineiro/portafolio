@@ -77,7 +77,7 @@ class Header extends Component {
                     <Link to="/habilidades" ref={(h1) => (this.hab = h1)} activeClassName="is-active">
                         Habilidades
                     </Link>
-                    <Menu ref={(h1) => (this.pro = h1)}>Proyectos</Menu>
+                    {/* <Menu ref={(h1) => (this.pro = h1)}>Proyectos</Menu> */}
                 </SectionMenu>
             </HeaderApp>
         );
